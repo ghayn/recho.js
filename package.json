@@ -1,0 +1,26 @@
+{
+  "name": "recho",
+  "version": "1.0.0",
+  "description": "📄 README.md # Recho 🚀",
+  "main": "bin/recho.js",
+  "bin": {
+    "recho": "./bin/recho.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "curlconverter": "^4.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.5",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2",
+    "nock": "^14.0.15"
+  }
+}

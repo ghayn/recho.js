@@ -1,12 +1,6 @@
-📄 README.md
 # Recho 🚀
 
-**Recho** 是一个极致极简、功能强大的命令行工具（CLI），专门用于批量解析 cURL 命令脚本、执行请求并完整归档请求与响应的上下文。
-
-## 🌟 核心理念
-- **极简主义**：输入短促有力，输出清晰直观。
-- **排查友好**：每一个响应都附带完整的请求镜像，拒绝“无头公案”。
-- **工业级可靠**：覆盖 cURL 的各种复杂参数与变体。
+**Recho** 是一个专门用于批量解析 cURL 命令脚本、执行请求并完整归档请求与响应的上下文。
 
 ## 🛠️ 安装
 
@@ -29,5 +23,5 @@ recho
 recho --input ./my-tests --output ./my-logs
 
 📂 文件命名规范
-生成的响应记录遵循：[METHOD]-[CLEAN_URL]-[TIMESTAMP].txt
-例如：POST-api_example_com_v1_login-1715151234567.txt
+生成的响应记录遵循：[STATUS_CODE]-[TIMESTAMP]-[ORIGINAL_FILE_NAME].txt
+例如：200-1778289502-login_request.txt
