@@ -10,8 +10,8 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "ghayn",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "curlconverter": "^4.12.0"
