@@ -62,4 +62,27 @@ describe('ExecuteReqAction', () => {
 
     await expect(ExecuteReqAction.execute(harRequest)).rejects.toThrow('Network Request Failed: Something went wrong');
   });
+
+  test('should handle cookies correctly and map them to the Cookie header', async () => {
+    const scope = nock('https://example.com')
+      .get('/')
+      .matchHeader('Cookie', 'session=123; user=ghayn')
+      .reply(200, 'OK');
+
+    const harRequest = {
+      method: 'GET',
+      url: 'https://example.com/',
+      headers: [],
+      cookies: [
+        { name: 'session', value: '123' },
+        { name: 'user', value: 'ghayn' }
+      ]
+    };
+
+    const result = await ExecuteReqAction.execute(harRequest);
+
+    expect(result.status).toBe(200);
+    expect(result.fetchOptions.headers['Cookie']).toBe('session=123; user=ghayn');
+    scope.done();
+  });
 });

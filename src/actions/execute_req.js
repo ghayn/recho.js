@@ -19,6 +19,21 @@ class ExecuteReqAction {
       });
     }
 
+    // Map HAR cookies to Cookie header if not already present or to append
+    if (harRequest.cookies && harRequest.cookies.length > 0) {
+      const cookieString = harRequest.cookies
+        .map(c => `${c.name}=${c.value}`)
+        .join('; ');
+      
+      if (fetchOptions.headers['Cookie']) {
+        fetchOptions.headers['Cookie'] += `; ${cookieString}`;
+      } else if (fetchOptions.headers['cookie']) {
+        fetchOptions.headers['cookie'] += `; ${cookieString}`;
+      } else {
+        fetchOptions.headers['Cookie'] = cookieString;
+      }
+    }
+
     // Handle body
     if (postData && postData.text) {
       fetchOptions.body = postData.text;
