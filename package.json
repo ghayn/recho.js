@@ -2,6 +2,10 @@
   "name": "@ghayn/recho",
   "version": "1.0.1",
   "description": "📄 README.md # Recho 🚀",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghayn/recho.js.git"
+  },
   "main": "bin/recho.js",
   "bin": {
     "recho": "./bin/recho.js"
