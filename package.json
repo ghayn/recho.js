@@ -1,5 +1,5 @@
 {
-  "name": "recho",
+  "name": "@ghayn/recho",
   "version": "1.0.1",
   "description": "📄 README.md # Recho 🚀",
   "main": "bin/recho.js",
